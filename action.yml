@@ -1,0 +1,36 @@
+name: Open AI Request 1Shot
+
+description: |
+  Github ActionsからAzureOpenAIのAPIをカジュアルにワンショット利用するActionです
+  Azure OpenAI Services の REST API リファレンス:
+    https://learn.microsoft.com/ja-jp/azure/cognitive-services/openai/reference#chat-completions
+
+inputs:
+  endpoint:
+    description: endpoint
+    required: true
+  key:
+    description: APIキー
+    required: true
+  model:
+    description: model|deployment_id
+    default: gpt-4
+    required: true
+  system_message:
+    description: システムメッセージ
+    required: true
+  user_message:
+    description: ユーザーメッセージ
+    required: true
+
+outputs:
+  result_assistant_message:
+    description: The return value of the chat/completion, extracted "assistant message"
+    value: ${{ steps.ai-1-shot.outputs.result_assistant_message }}
+  result_json_raw:
+    description: The return value of the chat/completion, RawData
+    value: ${{ steps.ai-1-shot.outputs.result_json_raw }}
+
+runs:
+  using: 'node16'
+  main: 'dist/index.js'
