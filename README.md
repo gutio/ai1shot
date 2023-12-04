@@ -1,0 +1,2 @@
+# ai1shot
+Github ActionsからAzureOpenAIのAPIをカジュアルにワンショット利用するActionです
