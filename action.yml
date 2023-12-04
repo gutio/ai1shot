@@ -1,9 +1,11 @@
 name: Open AI Request 1Shot
 
 description: |
-  Github ActionsからAzureOpenAIのAPIをカジュアルにワンショット利用するActionです
-  Azure OpenAI Services の REST API リファレンス:
-    https://learn.microsoft.com/ja-jp/azure/cognitive-services/openai/reference#chat-completions
+  Github ActionsからAzure Open AI の chat/completions をカジュアルにワンショット利用するActionです
+
+branding:
+  icon: "message-square"
+  color: "blue"
 
 inputs:
   endpoint:
